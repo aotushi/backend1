@@ -355,9 +355,10 @@ export default {
 
 			// 3.发请求
 			try {
-				console.log(spuForm)
+				
 				// 成功
 				await this.$API.spu.addUpdate(spuForm);
+				console.log(spuForm)
 				this.$message.success("保存spu成功");
 				// 返回列表页
 				this.$emit("update:visible", false);
@@ -370,6 +371,7 @@ export default {
 				this.$message.error("保存spu失败");
 			}
 		},
+
 		// 清空data中数据
 		resetData() {
 			this.dialogImageUrl = "";
