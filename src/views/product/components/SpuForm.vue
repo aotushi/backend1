@@ -355,6 +355,7 @@ export default {
 
 			// 3.发请求
 			try {
+				console.log(spuForm)
 				// 成功
 				await this.$API.spu.addUpdate(spuForm);
 				this.$message.success("保存spu成功");

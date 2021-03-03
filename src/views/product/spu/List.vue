@@ -109,7 +109,7 @@
 
 			<!-- 对应sku添加页面 -->
 			<!-- <div></div> -->
-			<SkuForm v-show="isShowSkuForm"></SkuForm>
+			<SkuForm v-show="isShowSkuForm" :visible.sync="isShowSkuForm" ref="sku"></SkuForm>
 		</el-card>
 	</div>
 </template>
@@ -191,7 +191,11 @@ export default {
 		},
 
 		// 点击添加sku的回调
-		showAddSkuForm(row) {},
+		showAddSkuForm(row) {
+			this.isShowSkuForm = true;
+
+			this.$refs.sku.getAddSkuFormInitData(row, this.category1Id, this.category2Id);
+		},
 
 		// 保存spu成功的返回
 		backSuccess() {
